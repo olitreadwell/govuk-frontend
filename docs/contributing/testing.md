@@ -38,7 +38,7 @@ If you need help with fixing an error or a warning, leave a note in your pull re
 
 ## 3. Check your changes in the ‘review app’
 
-In your project folder, run `npm start`, then go to [http://localhost:3000/]([http://localhost:3000/]) in your browser to open the 'review app'.
+In your project folder, run `npm start`, then go to [http://localhost:3000/](http://localhost:3000/) in your browser to open the 'review app'.
 
 Check that:
 
