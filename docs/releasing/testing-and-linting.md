@@ -12,7 +12,7 @@ Unit tests are small, modular tests that verify a "unit" of code. We write unit 
 
 Functional tests verify the output of an action and do not check the intermediate states of the system when performing that action. We write functional tests to check component interactions have the expected results, so we also refer to these as component tests. We also write functional tests to check that our Nunjucks code outputs expected HTML, and we refer to these as our Nunjucks tests.
 
-[Snapshot tests](https://facebook.github.io/jest/docs/en/snapshot-testing.html) are used for preventing unintended changes to our component markup. When the snapshot test runs, it compares the previously captured snapshot to the current markup.
+[Snapshot tests](https://jestjs.io/docs/snapshot-testing) are used for preventing unintended changes to our component markup. When the snapshot test runs, it compares the previously captured snapshot to the current markup.
 
 Visual regression tests help us check for any unintended visual changes to our components. We use [Percy](https://percy.io/) to generate and store screenshots of our components.
 
