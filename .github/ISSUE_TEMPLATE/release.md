@@ -46,7 +46,7 @@ Technical writers, Developers
 ### Design System site
 
 - [ ] Bump the version of `govuk-frontend`
-- [ ] Update [the "What's new" section on the homepage](https://github.com/alphagov/govuk-design-system/blob/main/views/partials/_whats-new.njk)
+- [ ] Update [the "What's new" section on the homepage](https://github.com/alphagov/govuk-design-system/blob/main/views/partials/_whats-new.md)
 - [ ] Update [the "Recently shipped" section of the roadmap](https://github.com/alphagov/govuk-design-system/blob/main/src/community/roadmap/index.md#recently-shipped)
 
 ### Frontend docs
