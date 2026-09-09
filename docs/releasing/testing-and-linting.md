@@ -12,7 +12,7 @@ Unit tests are small, modular tests that verify a "unit" of code. We write unit 
 
 Functional tests verify the output of an action and do not check the intermediate states of the system when performing that action. We write functional tests to check component interactions have the expected results, so we also refer to these as component tests. We also write functional tests to check that our Nunjucks code outputs expected HTML, and we refer to these as our Nunjucks tests.
 
-[Snapshot tests](https://facebook.github.io/jest/docs/en/snapshot-testing.html) are used for preventing unintended changes to our component markup. When the snapshot test runs, it compares the previously captured snapshot to the current markup.
+[Snapshot tests](https://jestjs.io/docs/snapshot-testing) are used for preventing unintended changes to our component markup. When the snapshot test runs, it compares the previously captured snapshot to the current markup.
 
 Visual regression tests help us check for any unintended visual changes to our components. We use [Percy](https://percy.io/) to generate and store screenshots of our components.
 
@@ -85,7 +85,7 @@ See [.prettierrc.js](/.prettierrc.js) for details.
 npm run lint:scss
 ```
 
-See [CSS Coding Standards](/docs/contributing/coding-standards/css.md#linting) for details.
+See [CSS Coding Standards](/docs/contributing/coding-standards/css.md#running-the-lint-task) for details.
 
 ### Running only JavaScript linting
 
@@ -105,19 +105,19 @@ Tests should be written using ES modules (`*.mjs`) by default, but use CommonJS 
 
 We write functional tests for every component to check the output of our Nunjucks code. These are found in `template.test.js` files in each component directory. These Nunjucks tests render the component examples defined in the component yaml files, and assert that the HTML tags, attributes and classes are as expected. For example: checking that when you pass in an `id` to the component using the Nunjucks macro, it outputs the component with an `id` attribute equal to that value.
 
-If a component uses JavaScript, we also write functional tests in a `[component name].test.js` file, for example [checkboxes.test.js](/packages/govuk-frontend/src/govuk/components/checkboxes/checkboxes.test.js). These component tests check that interactions, such as a mouse click, have the expected result.
+If a component uses JavaScript, we also write functional tests in a `[component name].test.js` file, for example [checkboxes.puppeteer.test.js](/packages/govuk-frontend/src/govuk/components/checkboxes/checkboxes.puppeteer.test.js). These component tests check that interactions, such as a mouse click, have the expected result.
 
 If you want to inspect a test that's running in the browser, configure Jest Puppeteer in non-headless mode with the environment variable `HEADLESS=false` and then use [Jest Puppeteer's debug mode](https://github.com/argos-ci/jest-puppeteer/blob/main/README.md#debug-mode) to pause the test execution.
 
 ```shell
-HEADLESS=false npx jest --watch src/govuk/components/tag/accessibility.test.mjs
+HEADLESS=false npx jest --watch src/govuk/components/tag/accessibility.puppeteer.test.mjs
 ```
 
 You should also test component Javascript logic with unit tests, in a `[component name].unit.test.mjs` file. These tests are better suited for testing behind-the-scenes logic, or in cases where the final output of some logic is not a change to the component markup.
 
 ### Global tests
 
-We write functional tests for checking our JavaScript exports and our global sass variables - see [all.test.mjs](/packages/govuk-frontend/src/govuk/all.test.mjs) and [components/globals.test.js](/packages/govuk-frontend/src/govuk/components/globals.test.js) for examples of global tests we run.
+We write functional tests for checking our JavaScript exports and our global sass variables - see [all.puppeteer.test.js](/packages/govuk-frontend/src/govuk/all.puppeteer.test.js) and [settings/colours.unit.test.js](/packages/govuk-frontend/src/govuk/settings/colours.unit.test.js) for examples of global tests we run.
 
 ### Conventions
 
