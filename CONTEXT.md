@@ -27,6 +27,7 @@
 
 ## Gap ledger (dedupe — READ FIRST, never re-pick)
 - 2026-09-08 self-found docs trivial fixes (malformed links, duplicated phrase, grammar, stale file/command refs, wrong doc line) — outcome: pr-opened — one packed trivial PR, 9 files.
+- 2026-09-09 self-found docs trivial fixes (broken TOC anchors, stale file path, dead Jest link, stale test-file refs) — outcome: pr-opened — one packed trivial PR, 3 files.
 
 ## Mined gaps (discovered, not yet attempted)
 - 2026-09-08 docs/contributing/testing.md L41 malformed link `[http://localhost:3000/]([http://localhost:3000/])` — status: attempted (in PR).
@@ -40,3 +41,10 @@
 - 2026-09-08 docs/releasing/testing-and-linting.md L108 stale ref `checkboxes.test.js` (now checkboxes.puppeteer.test.js) — status: attempted (in PR).
 - 2026-09-08 docs/contributing/tasks.md L78 stale ref `/gulpfile.mjs` (now /packages/govuk-frontend/gulpfile.mjs) — status: attempted (in PR).
 - 2026-09-08 docs/contributing/running-locally.md L5/L27 broken `/../../.nvmrc` links (should be `/.nvmrc`) — status: attempted (in PR).
+- 2026-09-09 CONTRIBUTING.md L18 broken anchor `#supported-browsers` (heading is `Supported browsers and assistive technology`) — status: attempted (in PR).
+- 2026-09-09 CONTRIBUTING.md L25 broken anchor `#running-application-tasks` (heading is `Application tasks`) — status: attempted (in PR).
+- 2026-09-09 CONTRIBUTING.md L27 stale TOC entry `Versioning` (section removed 2018) — status: attempted (in PR).
+- 2026-09-09 docs/contributing/managing-change.md L131 stale path `packages/tasks/config/deprecated-scripts.mjs` (now `packages/govuk-frontend/tasks/config/deprecated-scripts.mjs`) — status: attempted (in PR).
+- 2026-09-09 docs/releasing/testing-and-linting.md L15 dead Jest link `facebook.github.io/jest/docs/en/snapshot-testing.html` (404; now `jestjs.io/docs/snapshot-testing`) — status: attempted (in PR).
+- 2026-09-09 docs/releasing/testing-and-linting.md L88 broken anchor `css.md#linting` (heading is `Running the lint task`) — status: attempted (in PR).
+- 2026-09-09 docs/releasing/testing-and-linting.md L120 stale refs `all.test.mjs` (now `all.puppeteer.test.js`) and `components/globals.test.js` (deleted; sass vars now `settings/colours.unit.test.js`) — status: attempted (in PR).
