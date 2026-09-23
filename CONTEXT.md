@@ -65,3 +65,8 @@
 
 - `2026-09-24` upstream issue #7399 (FileUpload findLabel unescaped selector crashes on input ids with a double quote) - fixed with `CSS.escape()` in `findLabel`, added `file-upload.jsdom.test.mjs` regression test (fails with uncaught `SyntaxError` before, passes after). Verified locally (eslint, prettier, tsc, jest jsdom) + fork CI fully clean (all substantive checks green; only Percy/diff/stats skipped as fork artifacts; mergeable_state=clean). Outcome: pr-opened -> fork PR #23. Branch `fix-escape-file-upload-selector`, 1 commit.
 - Sibling upstream issues still open and unpicked (future candidates): #7397 (Tabs getTab/getPanel unescaped selectors) and #7395 (error summary / checkboxes unescaped selectors). No `CSS.escape` yet in `src/`.
+
+## Run ledger 2026-09-24 (issue #7397)
+
+- `2026-09-24` upstream issue #7397 (Tabs getTab/getPanel unescaped selectors) - fixed with `CSS.escape()` in `getTab` (`a.govuk-tabs__tab[href="${CSS.escape(hash)}"]`) and `getPanel` (`#${CSS.escape(panelId)}`), added `tabs.jsdom.test.mjs` regression test (backslash hash crashes before / falls back after; dotted id returns null before / resolves after). Verified locally: `npm ci` on Node 24, jest `tabs.jsdom` fails-without-fix / passes-with-fix, `npm run lint` green, `git diff --check` clean. Diff 67+/2-, 2 files (under max_diff_lines 200). Fork-only PR, non-draft (pr_policy.draft:false), base=fork main, 1 commit, no AI in body/commits (ai-tells 0). Outcome: pr-opened -> fork PR #24. Branch `fix-escape-tabs-selectors`.
+- Sibling upstream issue still open and unpicked (future candidate): #7395 (error summary / checkboxes unescaped selectors). No `CSS.escape` remaining gap in tabs/file-upload; #7395 is the only untouched member of the selector-injection cluster.
