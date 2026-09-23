@@ -1,5 +1,5 @@
 # alphagov/govuk-frontend context
-> refreshed 2026-09-08 | upstream default: main @ 6b7063b9cbf95cfbb758e4cf01e4d962b722a6eb
+> refreshed 2026-09-24 | upstream default: main @ 86f233319cb06e48c979f1519896f255fbcbc9d0
 
 ## Identity & policies
 - upstream: alphagov/govuk-frontend, default branch `main`, primary language JavaScript (GOV.UK Design System frontend).
@@ -24,6 +24,10 @@
 ## Issue-area health
 - docs/contributing + docs/releasing are low-traffic, low-contention areas — safe for trivial doc/link/typo fixes.
 - No contested/redesign signals in the docs files targeted this run.
+
+## Open issue-area notes (selector-injection cluster)
+- Upstream open issues #7395 (error summary / checkboxes), #7397 (tabs getTab/getPanel), #7399 (FileUpload findLabel) report the same unescaped-‘querySelector’ interpolation class; nothing fixed yet (no `CSS.escape` anywhere in `packages/govuk-frontend/src/`). No maintainer comments/assignees.
+- #7429 Enhanced File Upload Back/Forward banner bug is assigned to NickColley (in-flight – avoid).
 
 ## Gap ledger (dedupe — READ FIRST, never re-pick)
 - 2026-09-08 self-found docs trivial fixes (malformed links, duplicated phrase, grammar, stale file/command refs, wrong doc line) — outcome: pr-opened — one packed trivial PR, 9 files.
