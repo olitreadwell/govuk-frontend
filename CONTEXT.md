@@ -1,6 +1,6 @@
 # alphagov/govuk-frontend context
 
-> refreshed 2026-09-24 | upstream default: main @ 86f233319cb06e48c979f1519896f255fbcbc9d0
+> refreshed 2026-09-30 | upstream default: main @ fbf3b1b709057c5d2880c3965c988f3b1f705a69
 
 ## Identity & policies
 
@@ -39,6 +39,13 @@
 
 - 2026-09-08 self-found docs trivial fixes (malformed links, duplicated phrase, grammar, stale file/command refs, wrong doc line) — outcome: pr-opened — one packed trivial PR, 9 files.
 - 2026-09-09 self-found docs trivial fixes (broken TOC anchors, stale file path, dead Jest link, stale test-file refs) — outcome: pr-opened — one packed trivial PR, 3 files.
+- 2026-09-30 self-found trivial fixes (3 dead/outdated links + 8 comment/doc misspellings) — outcome: pr-opened — fork PR #27, 10 files. Do NOT re-fix: the Design System Community Backlog URL `https://design-system.service.gov.uk/community/backlog/` (410 -> GitHub backlog issues) in `docs/contributing/test-components-using-accessibility-acceptance-criteria.md` and `.github/ISSUE_TEMPLATE/feature-request.md`; the stale `views/partials/_whats-new.njk` path (-> `_whats-new.md`) in `.github/ISSUE_TEMPLATE/release.md`; and the spellings `characaters`, `explicitely`, `programatically` (x2), `prefered`, `seperate`, `seperately`, `sentance`.
+
+## Dedupe notes (checked, not picked)
+
+- 2026-09-30 upstream PR #7079 (open) already fixes `commited` -> `committed` in `bin/publish-preview.sh` — do not duplicate.
+- 2026-09-30 `http://getbem.com/introduction/` in `docs/contributing/coding-standards/css.md` is unreachable from this network (http 404, https connection refused) but is a whole-site outage, not a confirmed dead page; no confident replacement found, so left untouched.
+- 2026-09-30 `docs/contributing/tasks.md` `npm run build:all` is not stale (script lives in `tests/bundler-integrations/package.json`); `parth`/`Parth`, `ridiculus`, `varius`, `fave`, `MOT` are deliberate fixtures/Welsh/Latin, not typos.
 
 ## Mined gaps (discovered, not yet attempted)
 
