@@ -46,7 +46,7 @@
     Without maxlength or maxwords, we can't guess if the component will count words or characters.
     We can't guess a default textarea description to be interpolated in JavaScript
     once the maximum gets configured there.
-    So we only add the attribute if a textarea description was explicitely provided.
+    So we only add the attribute if a textarea description was explicitly provided.
   #}
   {%- if hasNoLimit and params.textareaDescriptionText %}
     {{- govukI18nAttributes({
