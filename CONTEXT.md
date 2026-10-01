@@ -1,6 +1,6 @@
 # alphagov/govuk-frontend context
 
-> refreshed 2026-09-30 | upstream default: main @ fbf3b1b709057c5d2880c3965c988f3b1f705a69
+> refreshed 2026-10-01 | upstream default: main @ fbf3b1b709057c5d2880c3965c988f3b1f705a69 (unchanged since the 2026-09-30 refresh)
 
 ## Identity & policies
 
@@ -39,7 +39,8 @@
 
 - 2026-09-08 self-found docs trivial fixes (malformed links, duplicated phrase, grammar, stale file/command refs, wrong doc line) — outcome: pr-opened — one packed trivial PR, 9 files.
 - 2026-09-09 self-found docs trivial fixes (broken TOC anchors, stale file path, dead Jest link, stale test-file refs) — outcome: pr-opened — one packed trivial PR, 3 files.
-- 2026-09-30 self-found trivial fixes (3 dead/outdated links + 8 comment/doc misspellings) — outcome: pr-opened — fork PR #27, 10 files. Do NOT re-fix: the Design System Community Backlog URL `https://design-system.service.gov.uk/community/backlog/` (410 -> GitHub backlog issues) in `docs/contributing/test-components-using-accessibility-acceptance-criteria.md` and `.github/ISSUE_TEMPLATE/feature-request.md`; the stale `views/partials/_whats-new.njk` path (-> `_whats-new.md`) in `.github/ISSUE_TEMPLATE/release.md`; and the spellings `characaters`, `explicitely`, `programatically` (x2), `prefered`, `seperate`, `seperately`, `sentance`.
+- 2026-09-30 self-found trivial fixes (3 dead/outdated links + 8 comment/doc misspellings) — outcome: pr-opened — fork PR #16 (opened as #27, closed as duplicate and absorbed into #16; 21 files). Do NOT re-fix: the Design System Community Backlog URL `https://design-system.service.gov.uk/community/backlog/` (410 -> GitHub backlog issues) in `docs/contributing/test-components-using-accessibility-acceptance-criteria.md` and `.github/ISSUE_TEMPLATE/feature-request.md`; the stale `views/partials/_whats-new.njk` path (-> `_whats-new.md`) in `.github/ISSUE_TEMPLATE/release.md`; and the spellings `characaters`, `explicitely` (in `template.njk`), `programatically` (x2), `prefered`, `seperate`, `seperately`, `sentance`.
+- 2026-10-01 self-found trivial fixes (10 comment/test-description misspellings across 9 files) — outcome: pr-opened — fork PR #28. Do NOT re-fix: `wraper`->`wrapper` and `reffering`->`referring` (file-upload/template.test.js), `reffering` (select/template.test.js, textarea/template.jsdom.test.js), `mutliple`->`multiple` (summary-list/template.test.js), `teh`->`the` (service-navigation.puppeteer.test.js), `temprarily`->`temporarily` (font-url.unit.test.js, image-url.unit.test.js), `informations`->`information` (tsconfig.base.json), `explicitely`->`explicitly` (error-summary/template.test.js).
 
 ## Dedupe notes (checked, not picked)
 
