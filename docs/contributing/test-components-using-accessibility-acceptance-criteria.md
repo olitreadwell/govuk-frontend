@@ -151,4 +151,4 @@ Components that you iterate may already have accessibility acceptance criteria. 
 
 If you're only making a small change to a component, then you only need to test against the criteria relevant to the change. For example, if you change a heading level, you will probably only need to test against the heading criteria.
 
-If you cannot find criteria in the [GOV.UK Design System Community Backlog](https://design-system.service.gov.uk/community/backlog/), then [ask the GOV.UK Design System team](https://design-system.service.gov.uk/#support).
+If you cannot find criteria in the [GOV.UK Design System Community Backlog](https://github.com/alphagov/govuk-design-system-backlog/issues), then [ask the GOV.UK Design System team](https://design-system.service.gov.uk/#support).

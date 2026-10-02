@@ -359,7 +359,7 @@ export class ExitThisPage extends ConfigurableComponent {
    * the announcement span having it's role set to "alert" and the keypress
    * indicator still active, leaving the page in an unusable state.
    *
-   * By running this check when the page is shown, we can programatically restore
+   * By running this check when the page is shown, we can programmatically restore
    * the page and the component to a "default" state
    *
    * @private
@@ -440,7 +440,7 @@ export class ExitThisPage extends ConfigurableComponent {
  * @see {@link ExitThisPage.defaults.i18n}
  * @typedef {object} ExitThisPageTranslations
  *
- * Messages used by the component programatically inserted text, including
+ * Messages used by the component programmatically inserted text, including
  * overlay text and screen reader announcements.
  * @property {string} [activated] - Screen reader announcement for when EtP
  *   keypress functionality has been successfully activated.

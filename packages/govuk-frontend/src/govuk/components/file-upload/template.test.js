@@ -225,7 +225,7 @@ describe('File upload', () => {
       expect($wrapper.attr('data-module')).toBe('govuk-file-upload')
     })
 
-    it('renders custom wraper classes', () => {
+    it('renders custom wrapper classes', () => {
       const $ = render(
         'file-upload',
         examples['enhanced, custom wrapper classes and attributes']
@@ -313,7 +313,7 @@ describe('File upload', () => {
       expect(htmlWithClassName($, '.govuk-label')).toMatchSnapshot()
     })
 
-    it('renders label with "for" attribute reffering the file-upload "id"', () => {
+    it('renders label with "for" attribute referring the file-upload "id"', () => {
       const $ = render('file-upload', examples.default)
 
       const $label = $('.govuk-label')
