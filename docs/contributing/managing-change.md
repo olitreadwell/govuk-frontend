@@ -128,7 +128,7 @@ JavaScript files may be removed because the module is no longer needed or has be
 
 However, the file needs to remain included in the built package, marked as deprecated, until it is removed in the next breaking release.
 
-1. To make sure the file remains in the package, add its path within `src/govuk` to the list of paths in `packages/tasks/config/deprecated-scripts.mjs`. For example:
+1. To make sure the file remains in the package, add its path within `src/govuk` to the list of paths in `packages/govuk-frontend/tasks/config/deprecated-scripts.mjs`. For example:
 
 ```mjs
 export const deprecatedFilesPaths = [

@@ -75,7 +75,7 @@ To verify the types in all our JavaScript files, run `npm run lint:types`
 
 ## Gulp tasks
 
-Project Gulp tasks are defined in [`gulpfile.mjs`](/gulpfile.mjs) and the [`tasks/`](/shared/tasks) folder.
+Project Gulp tasks are defined in [`gulpfile.mjs`](/packages/govuk-frontend/gulpfile.mjs) and the [`tasks/`](/shared/tasks) folder.
 
 Gulp tasks from npm workspaces (such as the review app) can be run as shown:
 
