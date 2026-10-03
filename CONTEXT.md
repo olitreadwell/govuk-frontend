@@ -1,6 +1,6 @@
 # alphagov/govuk-frontend context
 
-> refreshed 2026-10-02 | upstream default: main @ 283cc58ead97f3e3379199976709713914e00b05 (moved 2 commits since the 2026-10-01 refresh; dependabot bumps only)
+> refreshed 2026-10-03 | upstream default: main @ 283cc58ead97f3e3379199976709713914e00b05 (unchanged since the 2026-10-02 refresh; no new upstream commits)
 
 ## Identity & policies
 
@@ -15,7 +15,7 @@
 ## Conventions (verified from merged PRs)
 
 - branch naming: mixed — `dependabot/*`, `fix-*`, `feature-*`, `release-*`, `bump-*`, `update-*`. No single dominant human pattern; `fix-*`/`feature-*` are common. Use `fix-<kebab>`.
-- commit style: Conventional Commits `type(scope): subject` (e.g. `fix(component): ...`).
+- commit style: plain imperative, sentence case, no Conventional Commits prefix (re-checked 2026-10-03: 0/200 recent non-merge commits on `main` use a `type(scope):` prefix, e.g. "Add CHANGELOG entry for guard fix", "Fix broken guard").
 - test command: `npm test` / `npm run test`; lint: `npm run lint`; typecheck: `npm run lint:types`.
 - CI gates merge: GitHub Actions (lint, unit, puppeteer, build). Percy visual checks run but need upstream secrets — a fork PR may show Percy as a fork artifact, not a real failure.
 - outside PRs merge: responsive — recent external (non-dependabot) merges by romaricpascal, NickColley, 36degrees, querkmachine, owenatgov; Oli has 1 prior merged PR.
@@ -34,6 +34,7 @@
 
 - Upstream open issues #7395 (error summary / checkboxes), #7397 (tabs getTab/getPanel), #7399 (FileUpload findLabel) report the same unescaped-‘querySelector’ interpolation class; nothing fixed yet (no `CSS.escape` anywhere in `packages/govuk-frontend/src/`). No maintainer comments/assignees.
 - #7429 Enhanced File Upload Back/Forward banner bug is assigned to NickColley (in-flight – avoid).
+- #7419 (tabs, accessibility) mobile screen readers announce the decorative em-dash in the Tabs contents list; no assignee, no in-flight PR. Maintainer discussion (romaricpascal: consider CSS alt text, or draw the dash; NickColley: prefers keeping the glyph) — a fix that keeps the dash and adds empty alternative text satisfies both. Picked 2026-10-03 (fork PR #30).
 
 ## Gap ledger (dedupe — READ FIRST, never re-pick)
 
@@ -43,6 +44,7 @@
 - 2026-10-01 self-found trivial fixes (10 comment/test-description misspellings across 9 files) — outcome: pr-opened — fork PR #28. Do NOT re-fix: `wraper`->`wrapper` and `reffering`->`referring` (file-upload/template.test.js), `reffering` (select/template.test.js, textarea/template.jsdom.test.js), `mutliple`->`multiple` (summary-list/template.test.js), `teh`->`the` (service-navigation.puppeteer.test.js), `temprarily`->`temporarily` (font-url.unit.test.js, image-url.unit.test.js), `informations`->`information` (tsconfig.base.json), `explicitely`->`explicitly` (error-summary/template.test.js).
 
 - 2026-10-02 self-found trivial spelling fixes (6 misspelled words across 8 files) — outcome: pr-opened — fork PR #29. Do NOT re-fix: `summmaryHtml`/`summmaryText` -> `summaryHtml`/`summaryText` (`packages/govuk-frontend/src/govuk/components/details/details.yaml`); `wardobe` -> `wardrobe` (`travel-guidance`, `language-navigation-under-heading`, `language-navigation-sidebar` full-page examples); `Scoll` -> `Scroll` (`child-maintenance` full-page example); `brower` -> `browser` (`examples/javascript-errors`); `overriden` -> `overridden` (`packages/govuk-frontend/src/govuk/component.jsdom.test.mjs`); `currentVerisons` -> `currentVersions` (`shared/helpers/jest/browser/download.mjs`).
+- 2026-10-03 upstream issue #7419 (Tabs contents list dash announced by screen readers on mobile) - outcome: pr-opened - fork PR #30, branch `fix-tabs-dash-screen-reader`. Kept the `content: "\2014 "` glyph and added empty alternative text (`content: "\2014 " / ""`), a fallback-safe cascade; added a phone-viewport accessibility test and a CHANGELOG `Fixes` entry. Do NOT re-pick.
 - 2026-10-02 deliberately NOT fixed: `errorMessge` in `packages/govuk-frontend-review/src/views/examples/error-summary/index.njk` (misspelled `errorMessage` key that currently renders no error; fixing it changes the example’s rendered output, so it is a behaviour change, not a trivial typo). `CHANGELOG.md` historical typos (`overriden`, `unneccesarily`, `targetted`, `attrubutes`, `independantly`, `Hovever`, `fuschia`) left alone as released history. `dependant` (UK noun in test descriptions), `Github`/`Javascript` brand capitalisation, and `parth`/`ridiculus`/`varius`/`fave`/`MOT`/`Mis`/`broblem` fixtures are deliberate or dialect, not typos.
 
 ## Dedupe notes (checked, not picked)
@@ -90,3 +92,8 @@
 ## Run ledger 2026-10-02 (trivial spelling pass)
 
 - `2026-10-02` self-found trivial spelling fixes, packed into one PR: 6 distinct misspelled words across 8 files, 10 lines changed (9 tokens). Verified against current upstream main (283cc58ea; the fork PR base is fork main 951506e4d, upstream minus 2 dependabot bumps). Local verification: `npm ci --ignore-scripts`, `npm run lint` (editorconfig + prettier + eslint + tsc + stylelint) exit 0, `npm run build` exit 0, `npx jest --selectProjects "Nunjucks macro tests" --testPathPatterns 'components/details'` 12/12 pass, `npx jest packages/govuk-frontend/src/govuk/component.jsdom.test.mjs` 3/3 pass, `editorconfig-checker` clean on all 8 files. Diff 8 files / 10 lines, well under max_diff_lines 200 and max_files_per_trivial_pr 10. Fork-only PR, non-draft (pr_policy.draft:false), base=fork main, 1 commit `Fix spelling mistakes in docs, examples and tests`, no AI in body/commits. Outcome: pr-opened -> fork PR #29. Branch `fix-spelling-mistakes-in-docs-and-examples` @ c85535fde. Note: the `de-ai-text` gate tool could not run here (missing `skills/de-ai-text/rules/tells.json`); a manual word-boundary grep for AI tells was clean. alphagov org policy still records `cla_required: true` (promotion flag, not a staging blocker; govuk-frontend’s own CONTRIBUTING has no CLA and prior external PRs merged without signup).
+
+## Run ledger 2026-10-03 (issue #7419, tabs em-dash a11y)
+
+- `2026-10-03` upstream issue #7419 (mobile screen readers announce the decorative em-dash in the Tabs contents list) - fixed without touching the glyph: `.govuk-tabs__list-item::before` keeps `content: "\2014 "` and adds `content: "\2014 " / ""`, so supporting browsers expose no accessible text while browsers without `content` alt-text support fall back to the plain declaration and still render the dash. Added an `accessibility.puppeteer.test.mjs` case that emulates an iPhone viewport and asserts the dash stays in the computed `::before` content but is absent from the accessibility tree names. Also added an `Unreleased` > `Fixes` CHANGELOG entry referencing issue #7419. Verified: test FAILS on the unfixed build (snapshot names contain the em-dash) and PASSES with the fix; `npx jest --testPathPatterns 'components/tabs'` 37/37 pass; `npm run lint` (editorconfig + prettier + eslint + tsc + stylelint) exit 0; `npm run build` and `npm run build:package` exit 0 with the alt-text declaration surviving cssnano. Diff 3 files, +55/-0 (under max_diff_lines 200). Fork-only PR, non-draft (pr_policy.draft:false), base=fork main 283cc58ea, 1 commit `Hide the tabs contents list dash from screen readers` (plain imperative, matches repo style), no AI in body/commits. Fork CI: 43 substantive checks pass on Ubuntu+Windows; Percy / Diff changes / Stats comment skipped as fork artifacts. Outcome: pr-opened -> fork PR #30.
+- Note: repo has no PR template (repo or org default), so the pipeline 3-section fallback body was used, ending with exactly one PROMOTION NOTE and a verify block. alphagov org policy still records `cla_required: true` (promotion flag only; govuk-frontend's CONTRIBUTING has no CLA and external PRs merge without signup). CHANGELOG entry points at issue #7419 because no upstream PR number exists yet - update it at promotion.
