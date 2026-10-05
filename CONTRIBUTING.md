@@ -15,16 +15,15 @@ We love contributions! We've compiled these docs to help you understand our cont
   - [JavaScript](#javascript)
   - [Components and Nunjucks API](#components-and-nunjucks-api)
 - [Testing and linting](#testing-and-linting)
-- [Supported browsers](#supported-browsers)
+- [Supported browsers](#supported-browsers-and-assistive-technology)
 - [Commit hygiene](#commit-hygiene)
 - [Updating Changelog](#updating-changelog)
 - [Testing a release](#testing-a-release)
 
 ### For maintainers
 
-- [Application tasks](#running-application-tasks)
+- [Application tasks](#application-tasks)
 - [Deploying](#deploying)
-- [Versioning](#versioning)
 - [Releasing a new version](#releasing-a-new-version)
 
 ## Code of Conduct

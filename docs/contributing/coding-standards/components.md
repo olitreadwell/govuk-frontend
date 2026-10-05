@@ -11,7 +11,7 @@ Generally, folder and file names should be singular, for example ‘accordion’
 When creating your component, you should create the following files in the component’s folder:
 
 - `README.md` - Summary documentation with links to the installation instructions and component documentation on <https://design-system.service.gov.uk/>
-- `_index.scss` - The main Sass entry point for the component. Generates the styles by including the mixin from the `_mixin.scss` file. You can include `_index.scss` [on its own](https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#import-specific-parts-of-the-css), or [alongside other components in `components/_index.scss`](https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#import-specific-parts-of-the-css)
+- `_index.scss` - The main Sass entry point for the component. Generates the styles by including the mixin from the `_mixin.scss` file. You can include `_index.scss` [on its own](https://frontend.design-system.service.gov.uk/include-css/#include-specific-parts-of-gov-uk-frontend-using-sass), or [alongside other components in `components/_index.scss`](https://frontend.design-system.service.gov.uk/include-css/#include-specific-parts-of-gov-uk-frontend-using-sass)
 - `_mixin.scss` - The actual styles for the component, contained within a mixin. The `_index.scss` file includes the mixin. You should not include the `_mixin.scss` file directly.
 - `[component-name].yaml` - Lists the component's Nunjucks macro options and includes examples using these options. Both the options and examples are used to generate component documentation in the review app. The examples are also used to test component behaviour, and to generate [fixtures for testing alternative implementations of the design system](https://frontend.design-system.service.gov.uk/testing-your-html/).
 - `macro.njk` - The main entry point for rendering the component. It provides a `govuk[ComponentName](params)` macro, delegating render to the `template.njk` file
@@ -20,7 +20,7 @@ When creating your component, you should create the following files in the compo
 
 If your component uses JavaScript, you must also create the following files in the component’s folder:
 
-- `[component-name].mjs` - A JavaScript module with the implementation of any behaviour needed by the component. See the [JavaScript documentation]('./js.md#skeleton) for a skeleton and more details on that file's structure
+- `[component-name].mjs` - A JavaScript module with the implementation of any behaviour needed by the component. See the [JavaScript documentation](./js.md#skeleton) for a skeleton and more details on that file's structure
 - `[component-name].unit.test.mjs` - Unit tests to verify any component-specific lower-level logic.
 - `[component-name].test.js` - Functional tests to verify the behaviour of the whole component
 
