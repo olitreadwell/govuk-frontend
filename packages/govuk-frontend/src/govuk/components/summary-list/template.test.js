@@ -175,7 +175,7 @@ describe('Summary list', () => {
         expect($action.html().trim()).toBe('First action')
       })
 
-      it('renders a list with mutliple actions', async () => {
+      it('renders a list with multiple actions', async () => {
         const $ = render('summary-list', examples['with some actions'])
 
         const $component = $('.govuk-summary-list')

@@ -138,4 +138,4 @@ Where a feature is supported by all grade A and B browsers, we might also consid
 - including a polyfill
 - including a fallback mechanism
 
-Once a feature is supported by all grade A and B browsers, we might decide to remove or simplify any transpilation, polyfills or fallback mechanisms, polyfills or fallback mechanisms for grade C browsers as and when it becomes appropriate.
+Once a feature is supported by all grade A and B browsers, we might decide to remove or simplify any transpilation, polyfills or fallback mechanisms for grade C browsers as and when it becomes appropriate.

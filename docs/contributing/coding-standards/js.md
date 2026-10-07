@@ -13,14 +13,14 @@ component
 ## Skeleton
 
 ```mjs
-import { GOVUKFrontendComponent } from '../../govuk-frontend-component.mjs'
+import { Component } from '../../component.mjs'
 
 /**
  * Component name
  *
  * @preserve
  */
-export class Example extends GOVUKFrontendComponent {
+export class Example extends Component {
   /**
    * @param {Element | null} $root - HTML element to use for component
    */
