@@ -214,7 +214,7 @@ describe('Error-summary', () => {
       expect($component.attr('data-disable-auto-focus')).toBe('true')
     })
 
-    it('allows to explicitely enable autofocus', () => {
+    it('allows to explicitly enable autofocus', () => {
       const $ = render(
         'error-summary',
         examples['autofocus explicitly enabled']

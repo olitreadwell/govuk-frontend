@@ -40,7 +40,7 @@ To import add the below to your Sass file:
 @import "node_modules/govuk-frontend/dist/govuk/index";
 ```
 
-[More details on importing styles](https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#css)
+[More details on importing styles](https://frontend.design-system.service.gov.uk/include-css/)
 
 ## Importing JavaScript
 
@@ -63,13 +63,13 @@ Next you need to import and initialise GOV.UK Frontend by adding:
 </script>
 ```
 
-[More details on importing JavaScript and advanced options](https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#javascript)
+[More details on importing JavaScript and advanced options](https://frontend.design-system.service.gov.uk/import-javascript/)
 
 ## Importing assets
 
 In order to import GOV.UK Frontend images and fonts to your project, you should configure your application to reference or copy the relevant GOV.UK Frontend assets.
 
-[More details on importing assets](https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#font-and-image-assets)
+[More details on importing assets](https://frontend.design-system.service.gov.uk/import-font-and-images-assets/)
 
 ## Getting updates
 
