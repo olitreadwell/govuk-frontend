@@ -253,8 +253,9 @@ export class ExitThisPage extends ConfigurableComponent {
 
     // Detect if the 'Shift' key has been pressed. We want to only do things if it
     // was pressed by itself and not in a combination with another key—so we keep
-    // track of whether the preceding keyup had shiftKey: true on it, and if it
-    // did, we ignore the next Shift keyup event.
+    // track of whether the preceding keyup was for a key other than Shift and
+    // had shiftKey: true on it, and if it did, we ignore the next Shift keyup
+    // event.
     //
     // This works because using Shift as a modifier key (e.g. pressing Shift + A)
     // will fire TWO keyup events, one for A (with e.shiftKey: true) and the other
@@ -295,8 +296,11 @@ export class ExitThisPage extends ConfigurableComponent {
       this.resetKeypressTimer()
     }
 
-    // Keep track of whether the Shift modifier key was held during this keypress
-    this.lastKeyWasModified = event.shiftKey
+    // Keep track of whether the Shift modifier key was held during this keypress.
+    //
+    // Either Shift keyup reports shiftKey: true while the other Shift key is
+    // still held down, so we only consider keys other than Shift.
+    this.lastKeyWasModified = event.key !== 'Shift' && event.shiftKey
   }
 
   /**
