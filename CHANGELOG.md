@@ -78,6 +78,7 @@ We made this change in [pull request #6995: Add character count `Intl.Segmenter`
 
 We've made fixes to GOV.UK Frontend in the following pull requests:
 
+- [#7396: Escape special characters in selector lookups for the Error summary and Checkboxes components](https://github.com/alphagov/govuk-frontend/pull/7396)
 - [#7428: Fix guard in govuk-resolve-colour and add unit tests](https://github.com/alphagov/govuk-frontend/pull/7428) - thanks to @daniel-ac-martin for reporting and fixing this issue
 - [#7491: Correct panel example actions option](https://github.com/alphagov/govuk-frontend/pull/7491) - thanks to @markhobson for reporting and fixing this issue
 
