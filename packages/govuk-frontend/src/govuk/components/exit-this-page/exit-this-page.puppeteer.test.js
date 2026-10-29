@@ -214,6 +214,38 @@ describe('/components/exit-this-page', () => {
         )
         expect(message).toBe('Exit this page expired.')
       })
+
+      it('does not abort the shortcut when both Shift keys are used', async () => {
+        await render(page, 'exit-this-page', examples.default)
+
+        // Puppeteer's keyboard API clears the Shift modifier as soon as either
+        // Shift key is released, so dispatch the keyboard events directly to
+        // reproduce the real modifier state. Releasing the first Shift while
+        // the second is still held down reports `shiftKey: true`, which must
+        // not be mistaken for the Shift key being used as a modifier.
+        await page.evaluate(() => {
+          const dispatch = (type, code, shiftKey) =>
+            document.dispatchEvent(
+              new KeyboardEvent(type, {
+                key: 'Shift',
+                code,
+                shiftKey,
+                bubbles: true,
+                cancelable: true
+              })
+            )
+
+          dispatch('keydown', 'ShiftLeft', true)
+          dispatch('keydown', 'ShiftRight', true)
+          dispatch('keyup', 'ShiftLeft', true)
+          dispatch('keyup', 'ShiftRight', false)
+        })
+
+        const message = await page.$eval(buttonClass, (el) =>
+          el.nextElementSibling.innerHTML.trim()
+        )
+        expect(message).toBe('Shift, press 1 more time to exit.')
+      })
     })
 
     describe('errors at instantiation', () => {
