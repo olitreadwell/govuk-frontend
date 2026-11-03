@@ -291,7 +291,7 @@ describe('Select', () => {
       expect(htmlWithClassName($, '.govuk-label')).toMatchSnapshot()
     })
 
-    it('renders label with "for" attribute reffering the select "id"', () => {
+    it('renders label with "for" attribute referring the select "id"', () => {
       const $ = render('select', examples.default)
 
       const $label = $('.govuk-label')

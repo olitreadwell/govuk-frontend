@@ -292,7 +292,7 @@ describe('Textarea', () => {
       expect(document.querySelector('.govuk-label').outerHTML).toMatchSnapshot()
     })
 
-    it('renders label with "for" attribute reffering the textarea "id"', () => {
+    it('renders label with "for" attribute referring the textarea "id"', () => {
       document.body.innerHTML = render('textarea', examples.default)
 
       const $label = document.querySelector('.govuk-label')

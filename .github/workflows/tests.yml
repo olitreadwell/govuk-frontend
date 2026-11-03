@@ -215,7 +215,7 @@ jobs:
       - name: Run test task
         run: |
           # Use 2x CPU cores for hosted GitHub runners (--maxWorkers)
-          # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
+          # https://docs.github.com/en/actions/reference/runners/github-hosted-runners#supported-runners-and-hardware-resources
 
           # Puppeteer uses Chrome to execute tests.
           # Ubuntu requires a profile for developer builds of Chrome to run without errors.

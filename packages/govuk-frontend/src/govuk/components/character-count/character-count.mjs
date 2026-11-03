@@ -432,6 +432,8 @@ export class CharacterCount extends ConfigurableComponent {
    *
    * @private
    * @param {number} remainingNumber - The number of words/characters remaining
+   * @param {string} countType - "words" or "characters"
+   * @param {number} remainingNumber - The number of words/characters remaining
    * @param {CharacterCountConfig['countType']} [countType] - Deprecated
    * @returns {string} Status message
    */

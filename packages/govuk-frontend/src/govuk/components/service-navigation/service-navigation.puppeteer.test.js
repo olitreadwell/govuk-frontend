@@ -249,7 +249,7 @@ describe('/components/service-navigation', () => {
       })
 
       afterAll(async () => {
-        // After tests have run reset teh viewport to a phone
+        // After tests have run reset the viewport to a phone
         await page.emulate(iPhone)
       })
 

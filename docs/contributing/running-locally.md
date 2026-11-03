@@ -2,7 +2,7 @@
 
 You'll need [Git](https://help.github.com/articles/set-up-git/) and [Node.js](https://nodejs.org/en/) installed to get this project running.
 
-Note: You will need the Node.js version specified in the [.nvmrc](/../../.nvmrc) file.
+Note: You will need the Node.js version specified in the [.nvmrc](/.nvmrc) file.
 This should reflect the most current [active LTS (Long-term support)](https://github.com/nodejs/Release#release-schedule).
 
 ## 1. Fork repository (optional)
@@ -24,7 +24,7 @@ If you work across multiple Node.js projects there's a good chance they require 
 To enable this we use [nvm (Node Version Manager)](https://github.com/creationix/nvm) to switch between versions easily.
 
 1. [install nvm](https://github.com/creationix/nvm#installation)
-2. Run `nvm install` in the project directory (this will use [.nvmrc](/../../.nvmrc))
+2. Run `nvm install` in the project directory (this will use [.nvmrc](/.nvmrc))
 
 ## 4. Install npm dependencies
 

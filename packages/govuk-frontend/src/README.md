@@ -72,4 +72,4 @@ Class names within this layer use an additional prefix `-!-`, for example
 
 If a class only overrides when a condition is met, the condition will be at the end of the class name. For example `.govuk-!-display-none-print` will only override with `display: none` in a print layout.
 
-[ITCSS]: (http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528)
+[ITCSS]: http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528

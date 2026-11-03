@@ -63,7 +63,7 @@ The other primary way is through what is [published to npm](/packages/govuk-fron
 
 This includes:
 
-- [JavaScript](https://frontend.design-system.service.gov.uk/importing-css-assets-and-javascript/#javascript)
+- [JavaScript](https://frontend.design-system.service.gov.uk/import-javascript/)
 - [SCSS](https://frontend.design-system.service.gov.uk/sass-api-reference/#sass-api-reference)
 - Nunjucks Macros (Templates)
 
