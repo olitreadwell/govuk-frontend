@@ -4,12 +4,83 @@ For advice on how to use these release notes, see [our guidance on staying up to
 
 ## Unreleased
 
-### Fixes
+### Fixes
+
+### We've updated components to make more use of Functional colours
+
+If you set your own [Functional colours](https://design-system.service.gov.uk/styles/colour/#functional-colours) to theme GOV.UK Frontend, check the following components look as expected:
+
+- Accordion
+- File upload (enhanced)
+- Select
+
+We made these changes in the following pull requests:
+
+- [#7508: Use functional colours for more colours in Accordion and File upload](https://github.com/alphagov/govuk-frontend/pull/7508)
+- [#7509: Use body-background functional colour for Select component](https://github.com/alphagov/govuk-frontend/pull/7509)
+- [#7510: Keep file upload button background consistent](https://github.com/alphagov/govuk-frontend/pull/7510)
+- [#7565: Update File upload component to use functional colours where possible](https://github.com/alphagov/govuk-frontend/pull/7565)
+
+## v6.6.0 (Feature release)
+
+To install this version with npm, run `npm install govuk-frontend@6.6.0`. You can also find more information about [how to stay up to date](https://frontend.design-system.service.gov.uk/staying-up-to-date/#updating-to-the-latest-version) in our documentation.
+
+### New features
+
+#### We've improved how the Character count component works
+
+We've added a new `countType` option to the Character count component. This option uses JavaScript's [`Intl.Segmenter` object](https://developer.mozilla.org/en-US/blog/javascript-intl-segmenter-i18n/) to segment text into characters or words and make counting more accurate, particularly when users input special characters or emojis.
+
+You should consider how character or word limits are counted in your service's backend before using the `countType` option because you may need to adjust character or word limits.
+
+To enable improved counting in [supported browsers](https://caniuse.com/wf-intl-segmenter), you should either:
+
+- add `countType: "characters"` to count user-perceived characters
+- add `countType: "words"` to count words between word boundaries
+
+Unsupported browsers will default to the `textareaDescriptionText` message shown when JavaScript is unavailable, for example:
+
+> You can enter up to 350 characters
+
+To use Nunjucks to count characters, add `countType: "characters"`:
+
+```patch
+  {{ govukCharacterCount({
+    label: {
+      text: "Can you provide more detail?"
+    },
+    name: "more-detail",
+-   maxlength: 350
++   maxlength: 350,
++   countType: "characters"
+  }) }}
+```
+
+To use Nunjucks to count words, add `countType: "words"`:
+
+```patch
+  {{ govukCharacterCount({
+    label: {
+      text: "Can you provide more detail?"
+    },
+    name: "more-detail",
+-   maxwords: 150
++   maxlength: 150,
++   countType: "words"
+  }) }}
+```
+
+The Character count `maxwords` option and word-counting behaviour are deprecated, and we'll remove them in a future release. You must replace `maxwords` with `maxlength` when using `countType: "words"`.
+
+We made this change in [pull request #6995: Add character count `Intl.Segmenter` support](https://github.com/alphagov/govuk-frontend/pull/6995) - thanks to @colinrotherham and the NHS digital service manual team for contributing this change.
+
+### Fixes
 
 We've made fixes to GOV.UK Frontend in the following pull requests:
 
 - [#7419: Hide the Tabs contents list dash from screen readers](https://github.com/alphagov/govuk-frontend/issues/7419) - thanks to @LucyGeddis for reporting this issue
 - [#7428: Fix guard in govuk-resolve-colour and add unit tests](https://github.com/alphagov/govuk-frontend/pull/7428) - thanks to @daniel-ac-martin for reporting and fixing this issue
+- [#7491: Correct panel example actions option](https://github.com/alphagov/govuk-frontend/pull/7491) - thanks to @markhobson for reporting and fixing this issue
 
 ## v6.5.1 (Fix release)
 

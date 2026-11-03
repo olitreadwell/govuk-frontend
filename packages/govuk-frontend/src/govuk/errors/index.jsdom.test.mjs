@@ -1,4 +1,4 @@
-import { Accordion } from 'govuk-frontend'
+import { Accordion } from '../all.mjs'
 
 import {
   ElementError,
@@ -50,6 +50,15 @@ describe('errors', () => {
       // will see support checks run when document.body is still `null`
       expect(new SupportError(null).message).toBe(
         'GOV.UK Frontend initialised without `<script type="module">`'
+      )
+    })
+
+    it('allows a custom message to be provided', () => {
+      const supportMessage = 'Support for "navigator.clipboard" required'
+
+      expect(new SupportError(supportMessage)).toHaveProperty(
+        'message',
+        supportMessage
       )
     })
   })

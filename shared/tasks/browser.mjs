@@ -118,6 +118,7 @@ export async function screenshotComponent(browser, componentName, options) {
     options.screenshot === true ||
     options.screenshot.variants?.includes('default')
   ) {
+    // @ts-expect-error - This expression is not callable
     await percySnapshot(page, `js: ${screenshotName}`, snapshotOptions)
   }
 
@@ -135,9 +136,11 @@ export async function percySnapshotNoJs(page, screenshotName, snapShotOptions) {
   await page.setJavaScriptEnabled(false)
   await page.reload({ waitUntil: 'load' })
   screenshotName = `no-js: ${screenshotName}`
+  // @ts-expect-error - This expression is not callable
   await percySnapshot(page, screenshotName, {
     ...snapShotOptions,
-    labels: `${snapShotOptions.labels}, No-JS`
+    labels: `${snapShotOptions.labels}, No-JS`,
+    readiness: { preset: 'disabled' }
   })
   await page.setJavaScriptEnabled(true)
   await page.reload({ waitUntil: 'load' })
@@ -155,6 +158,7 @@ export async function screenshotExample(browser, exampleName) {
   const page = await goToExample(browser, exampleName)
 
   // Screenshot preview page
+  // @ts-expect-error - This expression is not callable
   await percySnapshot(page, `js: ${exampleName} (example)`, {
     scope: '.govuk-main-wrapper',
     labels: 'Examples'

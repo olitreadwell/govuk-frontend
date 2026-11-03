@@ -4,21 +4,7 @@ import replace from '@rollup/plugin-replace'
 import terser from '@rollup/plugin-terser'
 import { defineConfig } from 'rollup'
 
-// GOV.UK Frontend uses browser APIs at `import` time
-// because of static properties. These APIs are not available
-// in Node.js.
-// We mock them the time of the `import` so we can read
-// the name of GOV.UK Frontend's exports without errors
-async function getGOVUKFrontendExportsNames() {
-  try {
-    global.HTMLElement = /** @type {any} */ (function () {})
-    global.HTMLAnchorElement = /** @type {any} */ (function () {})
-    return Object.keys(await import('govuk-frontend/src/govuk/all.mjs'))
-  } finally {
-    delete global.HTMLElement
-    delete global.HTMLAnchorElement
-  }
-}
+import * as GOVUKFrontend from 'govuk-frontend/src/govuk/all.mjs'
 
 /**
  * Rollup config for GitHub release
@@ -47,6 +33,7 @@ export default defineConfig(async ({ i: input }) => ({
      * Output plugins
      */
     plugins: [
+      // @ts-expect-error - This expression is not callable
       terser({
         // Allow Terser to remove @preserve comments
         format: { comments: false },
@@ -56,7 +43,7 @@ export default defineConfig(async ({ i: input }) => ({
           keep_fnames: true,
           // Ensure all top-level exports skip mangling, for example
           // non-function string constants like `export { version }`
-          reserved: await getGOVUKFrontendExportsNames()
+          reserved: Object.keys(GOVUKFrontend)
         },
 
         // Include sources content from source maps to inspect
@@ -75,6 +62,7 @@ export default defineConfig(async ({ i: input }) => ({
    * Input plugins
    */
   plugins: [
+    // @ts-expect-error - This expression is not callable
     replace({
       include: '**/common/govuk-frontend-version.mjs',
       preventAssignment: true,

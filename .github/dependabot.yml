@@ -78,6 +78,30 @@ updates:
       # rather than jump to the latest major release of `@types/node`
       - dependency-name: '@types/node'
         update-types: ['version-update:semver-major']
+      # Stylelint 17 is ESM only and used in some of our tests
+      # Our current configuration doesn't let us use its JavaScript API in Jest
+      - dependency-name: 'stylelint'
+        update-types: ['version-update:semver-major']
+      # Until we support Stylelint 17, we cannot update to 3.0.0
+      - dependency-name: 'stylelint-config-gds'
+        update-types: ['version-update:semver-major']
+      # As we're not taking on updates for `@typescript/eslint-plugin`,
+      # we're stuck on 6.x for `typescript`
+      - dependency-name: 'typescript'
+        versions: '>=7.0.0'
+      # Until we can prioritise addressing the changes of Babel 8
+      - dependency-name: '@babel/*'
+        update-types: ['version-update:semver-major']
+      # Puppeteer is ESM only and used in some of our tests
+      # Our current configuration doesn't let it be `import`ed in Jest
+      - dependency-name: 'puppeteer'
+        update-types: ['version-update:semver-major']
+      # CSSNano removed their `main` entry from `package.json` in 8.0.3
+      # leading to `eslint-plugin-import` being unable to resolve it
+      # Version 9 has a fix is ESM only and used in some of our tests
+      # Our current configuration doesn't let it be `import`ed in Jest
+      - dependency-name: 'cssnano'
+        versions: '>=8.0.3'
 
     schedule:
       interval: monthly
