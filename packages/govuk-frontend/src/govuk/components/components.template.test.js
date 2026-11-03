@@ -7,9 +7,10 @@ const {
   nunjucksEnv,
   render
 } = require('@govuk-frontend/lib/components')
-const validatorConfig = require('govuk-frontend/.htmlvalidate.js')
 const { HtmlValidate } = require('html-validate')
 const { outdent } = require('outdent')
+
+const validatorConfig = require('govuk-frontend/.htmlvalidate.js')
 
 describe('Components', () => {
   let nunjucksEnvCustom
@@ -69,11 +70,17 @@ describe('Components', () => {
             // Target for label "for" attributes which need a specific element
             // https://html-validate.org/rules/valid-for.html
             supportingHTML = '<input type="text" id="test-target-input">'
-          } else {
-            // Target for references in examples (e.g. aria-controls)
-            // https://html-validate.org/rules/no-missing-references.html
-            supportingHTML = '<div id="test-target-element"></div>'
           }
+
+          // Target for references in examples (e.g. aria-controls)
+          // https://html-validate.org/rules/no-missing-references.html
+          supportingHTML += '<div id="test-target-element"></div>'
+
+          // Target for components referencing an external form e.g.
+          // <button form="test-form-element">Submit</button>
+          // https://html-validate.org/rules/no-missing-references.html
+          supportingHTML +=
+            '<form id="test-target-form-element"><button type="submit">Submit</button></form>'
 
           const html = outdent`
             ${render(componentName, {

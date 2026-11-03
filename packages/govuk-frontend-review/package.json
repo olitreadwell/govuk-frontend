@@ -4,7 +4,7 @@
   "description": "GOV.UK Frontend review app",
   "main": "src/start.mjs",
   "engines": {
-    "node": "^24.11.0",
+    "node": "^24.22.1",
     "npm": "^11.6.1 <11.6.3 || ^11.6.4"
   },
   "license": "MIT",
@@ -29,11 +29,11 @@
     "cookie-parser": "^1.4.7",
     "express": "^5.2.1",
     "express-validator": "^7.3.2",
-    "front-matter": "^4.0.2",
+    "@11ty/gray-matter": "^3.0.0",
     "govuk-frontend": "*",
     "highlight.js": "^11.12.0",
     "iframe-resizer": "^4.4.5",
-    "marked": "^18.0.14",
+    "marked": "^18.1.1",
     "marked-linkify-it": "^4.0.2",
     "marked-smartypants": "^1.1.12",
     "outdent": "^0.8.0",
@@ -43,10 +43,10 @@
   "devDependencies": {
     "@govuk-frontend/helpers": "*",
     "@govuk-frontend/tasks": "*",
-    "@percy/cli": "^1.32.10",
+    "@percy/cli": "^1.32.12",
     "@rollup/plugin-commonjs": "^29.0.3",
     "@rollup/plugin-node-resolve": "^16.0.3",
-    "@rollup/plugin-terser": "^1.0.0",
+    "@rollup/plugin-terser": "^1.0.2",
     "autoprefixer": "^10.5.4",
     "browser-sync": "^3.0.4",
     "gulp": "^5.0.1",
@@ -54,9 +54,9 @@
     "nodemon": "^3.1.14",
     "nunjucks": "^3.2.4",
     "postcss-pseudo-classes": "^0.4.0",
-    "puppeteer": "^24.42.0",
-    "rollup": "^4.63.5",
+    "puppeteer": "^24.43.1",
+    "rollup": "^4.65.0",
     "sassdoc": "^2.7.4",
-    "supertest": "^7.2.2"
+    "supertest": "^7.3.1"
   }
 }
