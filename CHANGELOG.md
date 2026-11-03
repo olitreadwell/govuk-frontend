@@ -6,6 +6,7 @@ For advice on how to use these release notes, see [our guidance on staying up to
 
 ### Fixes
 
+- [#5393: Keep the Exit this page shortcut active when both Shift keys are used](https://github.com/alphagov/govuk-frontend/issues/5393)
 - [#7396: Escape special characters in selector lookups for the Error summary and Checkboxes components](https://github.com/alphagov/govuk-frontend/pull/7396)
 ### We've updated components to make more use of Functional colours
 
