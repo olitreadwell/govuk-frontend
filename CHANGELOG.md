@@ -6,6 +6,7 @@ For advice on how to use these release notes, see [our guidance on staying up to
 
 ### Fixes
 
+- [#7396: Escape special characters in selector lookups for the Error summary and Checkboxes components](https://github.com/alphagov/govuk-frontend/pull/7396)
 ### We've updated components to make more use of Functional colours
 
 If you set your own [Functional colours](https://design-system.service.gov.uk/styles/colour/#functional-colours) to theme GOV.UK Frontend, check the following components look as expected:
