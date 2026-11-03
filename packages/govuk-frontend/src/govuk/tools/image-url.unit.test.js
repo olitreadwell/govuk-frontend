@@ -57,7 +57,7 @@ describe('@function image-url', () => {
         `
 
         // Until we only support Sass modules, users can pass the name of a native Sass function
-        // so we'll remove `global-builtin` from the fatalDeprecations temprarily
+        // so we'll remove `global-builtin` from the fatalDeprecations temporarily
         const fatalDeprecations = deprecationOptions.fatalDeprecations.filter(
           (deprecationId) => deprecationId !== 'global-builtin'
         )

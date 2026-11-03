@@ -3,7 +3,7 @@
   "name": "@govuk-frontend/webpack-boilerplate",
   "description": "Boilerplate example for govuk-frontend using webpack",
   "engines": {
-    "node": "^24.11.0",
+    "node": "^24.22.1",
     "npm": "^11.6.1 <11.6.3 || ^11.6.4"
   },
   "scripts": {
@@ -24,11 +24,11 @@
     "css-loader": "^7.1.5",
     "mini-css-extract-plugin": "^2.10.2",
     "postcss-loader": "^8.2.1",
-    "sass-embedded": "^1.103.1",
+    "sass-embedded": "^1.106.1",
     "sass-loader": "^17.0.1",
     "terser-webpack-plugin": "^5.3.16",
-    "webpack": "^5.110.2",
+    "webpack": "^5.112.2",
     "webpack-cli": "^7.2.3",
-    "webpack-dev-server": "^6.0.0"
+    "webpack-dev-server": "^6.1.0"
   }
 }

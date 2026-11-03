@@ -30,7 +30,7 @@ describe('custom-properties/functional-colours', () => {
   })
 
   describe('$govuk-output-custom-properties', () => {
-    it('outputs the properties properties if `true`', async () => {
+    it('outputs the properties if `true`', async () => {
       const sass = `
         @use "settings" with (
           $govuk-output-custom-properties: true

@@ -33,7 +33,7 @@ class BrowserAutomationEnvironment extends TestEnvironment {
  * @param {Error} error - The error to emit as `uncaughtException
  */
 function emitUncaughtException(error) {
-  // Ensure error appears in in reporter summary
+  // Ensure error appears in reporter summary
   // as Jest suppresses errors with stack traces
   delete error.stack
 

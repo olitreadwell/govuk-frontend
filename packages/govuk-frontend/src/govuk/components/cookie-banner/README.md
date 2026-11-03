@@ -12,4 +12,4 @@ Find out when to use the cookie banner component in your service in the [GOV.UK 
 
 Use options to customise the appearance, content and behaviour of a component when using a macro, for example, changing the text.
 
-See [options table](https://design-system.service.gov.uk/components/cookie-banner/#options-default-cookie-banner-example) for details.
+See [options table](https://design-system.service.gov.uk/components/cookie-banner/#options-cookie-banner-example) for details.

@@ -38,7 +38,7 @@ If you need help with fixing an error or a warning, leave a note in your pull re
 
 ## 3. Check your changes in the ‘review app’
 
-In your project folder, run `npm start`, then go to [http://localhost:3000/]([http://localhost:3000/]) in your browser to open the 'review app'.
+In your project folder, run `npm start`, then go to [http://localhost:3000/](http://localhost:3000/) in your browser to open the 'review app'.
 
 Check that:
 
@@ -123,7 +123,7 @@ Where `<COMPONENT>` is the name of the component you changed or added to.
 
 Update or add tests in the `.test.js` file that matches the name of the `.scss` file you created or updated. Create the `.test.js` file if it does not exist.
 
-For example, if you updated a mixin in [`packages/govuk-frontend/src/govuk/helpers/_colour.scss`](/packages/govuk-frontend/src/govuk/helpers/_colour.scss), update or add tests in [`packages/govuk-frontend/src/govuk/helpers/colour.test.js`](/packages/govuk-frontend/src/govuk/helpers/colour.test.js).
+For example, if you updated a mixin in [`packages/govuk-frontend/src/govuk/helpers/_colour.scss`](/packages/govuk-frontend/src/govuk/helpers/_colour.scss), update or add tests in [`packages/govuk-frontend/src/govuk/helpers/colour.unit.test.js`](/packages/govuk-frontend/src/govuk/helpers/colour.unit.test.js).
 
 ## 7. Update the snapshot tests
 

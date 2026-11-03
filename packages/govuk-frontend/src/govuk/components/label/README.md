@@ -12,4 +12,4 @@ The label component is used in other input components. To see an example of it i
 
 Use options to customise the appearance, content and behaviour of a component when using a macro, for example, changing the text.
 
-See [options table](https://design-system.service.gov.uk/components/text-input/#options-text-input-example--label) for details.
+See [options table](https://design-system.service.gov.uk/components/text-input/nunjucks/#options---label) for details.

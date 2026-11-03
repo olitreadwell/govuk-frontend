@@ -12,4 +12,4 @@ Find out when to use the task list component in your service in the [GOV.UK Desi
 
 Use options to customise the appearance, content and behaviour of a component when using a macro, for example, changing the text.
 
-See [options table](https://design-system.service.gov.uk/components/task-list/#options-task-list-example) for details.
+See [options table](https://design-system.service.gov.uk/components/task-list/#options-default-1) for details.
