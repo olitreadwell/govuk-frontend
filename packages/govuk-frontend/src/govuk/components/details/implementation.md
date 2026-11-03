@@ -81,7 +81,7 @@ able to access the disclosed content.
 
 For the arrows themselves, we originally tried using unicode glyphs –
 specifically \25B6 (Black right-pointing triangle) and 25BC (Black down-pointing
-triangle) but Android insists on substituting the the former for an emoji even
+triangle) but Android insists on substituting the former for an emoji even
 when the \00FE0E modifier is applied. Sad face.
 
 Hence the border-based triangles we are using today.

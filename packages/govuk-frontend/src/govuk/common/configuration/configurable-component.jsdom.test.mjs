@@ -9,7 +9,7 @@ describe('ConfigurableComponent', () => {
 
     // this is tested in the parent class GOVUKFrontendComponent
     // so it can be go before each test instead of it needing to
-    // be added each time seperately
+    // be added each time separately
     document.body.classList.add('govuk-frontend-supported')
   })
 

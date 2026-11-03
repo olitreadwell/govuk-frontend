@@ -26,8 +26,8 @@ export async function download() {
     await install({ browser, buildId, cacheDir })
   }
 
-  const currentVerisons = cache.getInstalledBrowsers()
-  if (!currentVerisons || !currentVerisons.length) {
+  const currentVersions = cache.getInstalledBrowsers()
+  if (!currentVersions || !currentVersions.length) {
     throw new Error('No browser versions are installed.')
   }
 }

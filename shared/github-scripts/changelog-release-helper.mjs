@@ -285,7 +285,7 @@ function removePrereleaseFlag(version) {
 }
 
 /**
- * Capitalise a word or sentance so the first letter is uppercase
+ * Capitalise a word or sentence so the first letter is uppercase
  *
  * @param {string} word
  * @returns {string} - capitalised string

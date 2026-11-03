@@ -25,7 +25,7 @@ describe('Component', () => {
       })
     })
 
-    describe('when overriden', () => {
+    describe('when overridden', () => {
       it('Allows child classes to define their own condition for support', () => {
         class ServiceComponent extends Component {
           static moduleName = 'app-service-component'

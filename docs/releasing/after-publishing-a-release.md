@@ -20,7 +20,7 @@ This email should:
 - say which components or styles are affected (if applicable)
 - thank any major contributors using their GitHub usernames
 
-A release email will typically end with a link to the version's [release notes](https://github.com/alphagov/govuk-frontend/releases), and a call-to-action button to the [update npm how-to page](https://frontend.design-system.service.gov.uk/updating-with-npm/#update-using-node-js-package-manager-npm).
+A release email will typically end with a link to the version's [release notes](https://github.com/alphagov/govuk-frontend/releases), and a call-to-action button to the [update npm how-to page](https://frontend.design-system.service.gov.uk/staying-up-to-date/#updating-to-the-latest-version-if-you-installed-gov-uk-frontend-using-npm).
 
 For example, see the [release email for GOV.UK Frontend 5.11.0](https://mailchi.mp/c877961d1db5/feature-release-govuk-frontend-v590-improved-file-upload-component-10977163?e=[UNIQID]).
 
